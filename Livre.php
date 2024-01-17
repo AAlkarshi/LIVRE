@@ -5,15 +5,16 @@ class Livre {
     private int $nbxdepages;
     private int $anneedeparution;
     private float $prix;
-    private array $livres;
+    private string $Auteur;
   
     public function __construct(string $titre,int $nbxdepages,int $anneedeparution,
-                                float $prix,array $livres) {
+                                float $prix,  string $Auteur) {
                 $this->titre = $titre;
                 $this->nbxdepages = $nbxdepages;
                 $this->anneedeparution = $anneedeparution;
                 $this->prix = $prix;
-                $this->livres = $livres;
+                $this->Auteur = $Auteur;
+                $this->Auteur->AjoutLivre($this);
     }
 
     public function gettitre(): string {
@@ -28,9 +29,10 @@ class Livre {
     public function getprix(): float {
         return $this->prix;
     }
-    public function getlivres(): array {
-        return $this->livres;
+    public function getAuteur(): string {
+        return $this->Auteur;
     }
+
     
     public function settitre($titre) {
         $this->titre = $titre;
@@ -44,11 +46,15 @@ class Livre {
     public function setprix($prix) {
         $this->prix = $prix;
     }    
-   public function setlivres($livres) {
-        $this->livres = $livres;
+    public function setAuteur($Auteur) {
+        $this->Auteur = $Auteur;
     }
     
+   
 
+   
+
+    
 
     public function afficherBibliographie($livres) {
         foreach ($livres as $livre) {
