@@ -5,10 +5,10 @@ class Livre {
     private int $nbxdepages;
     private int $anneedeparution;
     private float $prix;
-    private string $Auteur;
+    private Auteur $Auteur;
   
     public function __construct(string $titre,int $nbxdepages,int $anneedeparution,
-                                float $prix,  string $Auteur) {
+                                float $prix,  Auteur $Auteur) {
                 $this->titre = $titre;
                 $this->nbxdepages = $nbxdepages;
                 $this->anneedeparution = $anneedeparution;
@@ -29,7 +29,7 @@ class Livre {
     public function getprix(): float {
         return $this->prix;
     }
-    public function getAuteur(): string {
+    public function getAuteur(): Auteur {
         return $this->Auteur;
     }
 
@@ -52,17 +52,6 @@ class Livre {
     
    
 
-   
-
-    
-
-    public function afficherBibliographie($livres) {
-        foreach ($livres as $livre) {
-             echo $livre->gettitre() . " " . "(".$livre->getanneedeparution().")" ." " . ":" . " ".
-             $livre->getnbxdepages(). " " ."pages". " " .  "/" . " " . $livre->getprix() . "€"; 
-             echo "<br>"; 
-        }
-    } 
 
  
     public function __toString() {
